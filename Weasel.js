@@ -1,6 +1,6 @@
 /**
  * @class Weasel
- * JavaScript implementation of Richard Dawkins's 'Weasel Program' 
+ * JavaScript implementation of Richard Dawkins' Weasel Program
  * (http://en.wikipedia.org/wiki/Weasel_program)
  */
 Weasel = function(config) {
@@ -22,9 +22,9 @@ Weasel = function(config) {
 
 Weasel.prototype = {
   /**
-   * Starts the search towards the target. Returns an object containing run data
+   * Starts the search towards the target. Returns an array of all generated ancester strings
    * @param {String} seed The seed string (defaults to a random string)
-   * @return {Object} The run data, consisting of:
+   * @return {Array} The array of ancestors
    */
   find: function(seed) {
     var seed    = seed || this.generateSeed(this.target.length),
@@ -32,7 +32,6 @@ Weasel.prototype = {
         current = seed;
     
     while (this.score(current) < current.length) {
-    // for (var i=0; i < 15; i++) {
       var parent   = species[species.length - 1],
           children = this.breedChildren(parent),
           current  = this.select(children);
