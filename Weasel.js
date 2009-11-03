@@ -1,12 +1,13 @@
 /**
  * @class Weasel
+ * @author Ed Spencer (http://edspencer.net)
  * JavaScript implementation of Richard Dawkins' Weasel Program
  * (http://en.wikipedia.org/wiki/Weasel_program)
  */
 Weasel = function(config) {
   var config   = config || {},
       defaults = {
-        target     : "METHINKS IT IS A WEASEL",
+        target     : "METHINKS IT IS A LIKE WEASEL",
         mutateRate : 0.9,
         numChildren: 5
       };
